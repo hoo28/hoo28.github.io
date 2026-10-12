@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>최지후 | 자기소개</title>
+<meta name="description" content="최지후의 자기소개 페이지">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#ffe9d6;--bg2:#d9ecff;--bg3:#e6dcff;
+    --ink:#2b2340;--sub:#6b6385;--card:rgba(255,255,255,.72);--line:rgba(255,255,255,.9);
+    --accent:#ff6b8b;--accent2:#6a5cff;--shadow:0 10px 30px rgba(90,70,160,.15);
+  }
+  :root[data-theme="dark"]{
+    --bg1:#1b1530;--bg2:#10213a;--bg3:#241743;
+    --ink:#f2edff;--sub:#b3a9d4;--card:rgba(255,255,255,.07);--line:rgba(255,255,255,.14);
+    --accent:#ff8fa8;--accent2:#9d90ff;--shadow:0 10px 30px rgba(0,0,0,.4);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;min-height:100vh;color:var(--ink);font-family:"Gowun Dodum","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.75;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2) 55%,var(--bg3)) fixed;transition:color .3s}
+  main{max-width:720px;margin:0 auto;padding:28px 18px 60px}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+  .logo{font-family:"Jua",sans-serif;font-size:1.2rem;color:var(--accent2)}
+  button,.btn{font:inherit;color:var(--ink);cursor:pointer}
+  .btn{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 18px;box-shadow:var(--shadow);backdrop-filter:blur(8px);text-decoration:none;display:inline-block;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:scale(.95)}
+  button:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+
+  .hero{text-align:center;padding:30px 20px 34px;background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);backdrop-filter:blur(10px);margin-bottom:22px}
+  .avatar{width:120px;height:120px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-family:"Jua",sans-serif;font-size:3.2rem;box-shadow:0 8px 24px rgba(106,92,255,.4);animation:float 4s ease-in-out infinite}
+  .avatar:active{animation:none;transform:scale(.9) rotate(-8deg)}
+  @keyframes float{50%{transform:translateY(-8px)}}
+  @media (prefers-reduced-motion:reduce){.avatar{animation:none}html{scroll-behavior:auto}}
+  h1{font-family:"Jua",sans-serif;font-weight:400;font-size:clamp(2rem,8vw,3rem);line-height:1.2;margin:18px 0 6px}
+  h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  #mood{margin:0;color:var(--sub);min-height:1.7em}
+
+  section{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);backdrop-filter:blur(10px);padding:22px 24px;margin-bottom:18px}
+  h2{font-family:"Jua",sans-serif;font-weight:400;font-size:1.25rem;margin:0 0 12px}
+  p{margin:0}
+  ul{margin:0;padding-left:1.2em}
+  .row{display:flex;flex-wrap:wrap;gap:10px}
+  .tab.on{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
+  #panel{margin-top:14px;padding:14px 18px;border-radius:16px;background:rgba(255,255,255,.35);min-height:70px}
+  :root[data-theme="dark"] #panel{background:rgba(255,255,255,.05)}
+  details{border-radius:14px;padding:10px 16px;margin-bottom:8px;background:rgba(255,255,255,.35);border:1px solid var(--line)}
+  :root[data-theme="dark"] details{background:rgba(255,255,255,.05)}
+  summary{cursor:pointer;font-weight:700}
+  details p{margin-top:6px;color:var(--sub)}
+  #quote{margin-top:12px;min-height:1.7em;color:var(--accent2);font-weight:700}
+  .check{list-style:none;padding:0}
+  .check li{margin:6px 0}
+  .check input{margin-right:10px;accent-color:var(--accent2);width:18px;height:18px;vertical-align:middle}
+  .done{text-decoration:line-through;opacity:.5}
+  #bar{height:10px;background:rgba(120,110,170,.2);border-radius:6px;margin:12px 0 6px;overflow:hidden}
+  #fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:6px;transition:width .3s}
+  #pct{color:var(--sub);font-size:.9rem}
+  footer{text-align:center;color:var(--sub);font-size:.85rem;margin-top:26px}
+  .pop{position:fixed;pointer-events:none;font-size:1.4rem;animation:pop .9s ease-out forwards}
+  @keyframes pop{to{transform:translateY(-70px);opacity:0}}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <span class="logo">jihoo.log</span>
+    <button class="btn" id="theme">🌙 다크모드</button>
+  </div>
+
+  <div class="hero">
+    <button class="avatar" id="avatar" aria-label="아바타를 눌러보세요">최</button>
+    <h1>안녕하세요,<br><span>최지후</span>입니다</h1>
+    <p id="mood">호기심 많은 신입 개발자 · 아바타를 눌러보세요!</p>
+  </div>
+
+  <section>
+    <h2>👋 소개</h2>
+    <p>새로운 걸 만들어 보는 일을 좋아합니다. 이 페이지는 수업 Sprint 1에서 처음 배포한 저의 첫 웹사이트이고, 앞으로 계속 고쳐 나갈 예정입니다.</p>
+  </section>
+
+  <section>
+    <h2>🧭 나는 어떤 사람일까?</h2>
+    <div class="row" role="tablist">
+      <button class="btn tab on" data-k="interest">관심 분야</button>
+      <button class="btn tab" data-k="doing">요즘 하는 것</button>
+      <button class="btn tab" data-k="goal">목표</button>
+    </div>
+    <div id="panel"></div>
+  </section>
+
+  <section>
+    <h2>💬 자주 묻는 질문</h2>
+    <details><summary>왜 이 수업을 듣나요?</summary><p>직접 만든 결과물을 인터넷에 올려 보고 싶어서입니다.</p></details>
+    <details><summary>가장 만들고 싶은 것은?</summary><p>친구들이 실제로 쓰는 작은 웹 서비스입니다.</p></details>
+    <details><summary>좋아하는 작업 방식은?</summary><p>일단 작게 만들고, 조금씩 고쳐 나가는 방식입니다.</p></details>
+  </section>
+
+  <section>
+    <h2>🎲 오늘의 한마디</h2>
+    <button class="btn" id="qbtn">한마디 뽑기</button>
+    <p id="quote"></p>
+  </section>
+
+  <section>
+    <h2>✅ 다음 Sprint Backlog</h2>
+    <ul class="check" id="todo"></ul>
+    <div id="bar"><div id="fill"></div></div>
+    <p id="pct">0% 완료</p>
+  </section>
+
+  <section>
+    <h2>📮 연락처 &amp; 응원</h2>
+    <p>이메일: <span id="mail">example@email.com</span></p>
+    <div class="row" style="margin-top:12px">
+      <button class="btn" id="copy">이메일 복사</button>
+      <button class="btn" id="like">👍 응원하기 <b id="likes">0</b></button>
+      <a class="btn" href="https://github.com/bizict">GitHub 가기</a>
+    </div>
+  </section>
+
+  <footer>© 2026 최지후 · Sprint 1 · 계속 진화 중 🌱</footer>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+const store={
+  get(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+function pop(e,txt){
+  const s=document.createElement('span');s.className='pop';s.textContent=txt;
+  s.style.left=(e.clientX-10)+'px';s.style.top=(e.clientY-10)+'px';
+  document.body.appendChild(s);setTimeout(()=>s.remove(),900);
+}
+
+function setTheme(t){document.documentElement.dataset.theme=t;$('#theme').textContent=t==='dark'?'☀️ 라이트모드':'🌙 다크모드';store.set('theme',t)}
+setTheme(store.get('theme',matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+$('#theme').onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+
+const moods=['😎 오늘은 자신감 넘치는 날','🤔 뭘 만들지 고민 중','🔥 코딩 모드 ON','☕ 커피가 필요해요','🚀 배포하러 갑니다'];
+let mi=0;$('#avatar').onclick=e=>{mi=(mi+1)%moods.length;$('#mood').textContent=moods[mi];pop(e,'✨')};
+
+const tabs={
+  interest:'<ul><li>웹 개발</li><li>AI 활용</li><li>게임 만들기</li><li>데이터 분석</li></ul>',
+  doing:'<ul><li>GitHub Pages로 웹페이지 배포 배우기</li><li>HTML과 CSS 기초 익히기</li><li>작은 프로젝트로 포트폴리오 만들기</li></ul>',
+  goal:'<ul><li>이번 학기 안에 개인 프로젝트 1개 완성</li><li>내 사이트에 프로젝트 5개 모으기</li></ul>'
+};
+function showTab(k){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.k===k));$('#panel').innerHTML=tabs[k]}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showTab(b.dataset.k));
+showTab('interest');
+
+const quotes=['완벽보다 배포가 먼저다.','작게 만들고 빨리 고친다.','오늘 한 줄이 내일의 서비스가 된다.','막히면 에러 메시지를 천천히 읽자.','커밋은 자주, 겁은 적게.'];
+$('#qbtn').onclick=()=>{$('#quote').textContent='"'+quotes[Math.floor(Math.random()*quotes.length)]+'"'};
+
+const items=['실제 사진과 소개 문구로 교체','프로젝트 목록 섹션 추가','모바일 화면 다듬기','방문자 방명록 만들기','README에 Backlog 정리'];
+let checked=store.get('todo',[]);
+function renderTodo(){
+  $('#todo').innerHTML=items.map((t,i)=>`<li><label class="${checked.includes(i)?'done':''}"><input type="checkbox" data-i="${i}" ${checked.includes(i)?'checked':''}>${t}</label></li>`).join('');
+  const p=Math.round(checked.length/items.length*100);
+  $('#fill').style.width=p+'%';$('#pct').textContent=p+'% 완료';
+}
+$('#todo').onchange=e=>{
+  const i=+e.target.dataset.i;
+  checked=e.target.checked?[...checked,i]:checked.filter(x=>x!==i);
+  store.set('todo',checked);renderTodo();
+};
+renderTodo();
+
+$('#copy').onclick=async()=>{
+  const b=$('#copy');
+  try{await navigator.clipboard.writeText($('#mail').textContent);b.textContent='복사됨 ✓'}catch(e){b.textContent='길게 눌러 복사하세요'}
+  setTimeout(()=>b.textContent='이메일 복사',1500);
+};
+let likes=store.get('likes',0);$('#likes').textContent=likes;
+$('#like').onclick=e=>{likes++;$('#likes').textContent=likes;store.set('likes',likes);pop(e,'❤️')};
+</script>
+</body>
+</html>
