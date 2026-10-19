@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# AI 크롤러 명시적 허용 (생성형 AI 검색 인용을 원하는 경우)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://hoo28.github.io/sitemap.xml

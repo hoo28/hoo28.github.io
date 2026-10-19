@@ -3,10 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>최지후 | 자기소개</title>
-<meta name="description" content="최지후의 자기소개 페이지">
+<title>최지후 | 자기소개 — 호기심 많은 신입 개발자</title>
+<meta name="description" content="웹 개발, AI 활용, 게임 만들기에 관심 있는 신입 개발자 최지후의 자기소개 페이지입니다. 작게 만들고 빠르게 고치는 작업 방식을 좋아합니다.">
+<meta name="author" content="최지후">
+<meta name="theme-color" content="#6a5cff">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hoo28.github.io/">
+
+<!-- favicon (이모지 SVG) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+
+<!-- Open Graph (카카오톡/페이스북/슬랙 공유 미리보기) -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="최지후 | 자기소개 — 호기심 많은 신입 개발자">
+<meta property="og:description" content="웹 개발, AI 활용, 게임 만들기에 관심 있는 신입 개발자 최지후의 자기소개 페이지입니다.">
+<meta property="og:url" content="https://hoo28.github.io/">
+<meta property="og:image" content="https://hoo28.github.io/og-image.png">
+<meta property="og:locale" content="ko_KR">
+<meta property="profile:first_name" content="지후">
+<meta property="profile:last_name" content="최">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="최지후 | 자기소개 — 호기심 많은 신입 개발자">
+<meta name="twitter:description" content="웹 개발, AI 활용, 게임 만들기에 관심 있는 신입 개발자 최지후의 자기소개 페이지입니다.">
+<meta name="twitter:image" content="https://hoo28.github.io/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
+
+<!-- 구조화 데이터: Person (SEO 지식패널 + AI 인용) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "최지후",
+  "url": "https://hoo28.github.io/",
+  "jobTitle": "신입 개발자",
+  "description": "웹 개발, AI 활용, 게임 만들기에 관심 있는 신입 개발자",
+  "knowsAbout": ["웹 개발", "HTML", "CSS", "JavaScript", "AI 활용", "데이터 분석"],
+  "sameAs": [
+    "https://github.com/bizict"
+  ]
+}
+</script>
+
+<!-- 구조화 데이터: FAQPage (리치 결과 + AI 인용) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "최지후는 왜 이 수업을 듣나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "직접 만든 결과물을 인터넷에 올려 보고 싶어서입니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "최지후가 가장 만들고 싶은 것은 무엇인가요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "친구들이 실제로 쓰는 작은 웹 서비스입니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "최지후가 좋아하는 작업 방식은 무엇인가요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "일단 작게 만들고, 조금씩 고쳐 나가는 방식입니다." }
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --bg1:#ffe9d6;--bg2:#d9ecff;--bg3:#e6dcff;
@@ -48,6 +114,8 @@
   .tab.on{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
   #panel{margin-top:14px;padding:14px 18px;border-radius:16px;background:rgba(255,255,255,.35);min-height:70px}
   :root[data-theme="dark"] #panel{background:rgba(255,255,255,.05)}
+  .tabh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  .tabc[hidden]{display:none}
   details{border-radius:14px;padding:10px 16px;margin-bottom:8px;background:rgba(255,255,255,.35);border:1px solid var(--line)}
   :root[data-theme="dark"] details{background:rgba(255,255,255,.05)}
   summary{cursor:pointer;font-weight:700}
@@ -67,10 +135,10 @@
 </head>
 <body>
 <main>
-  <div class="top">
+  <header class="top">
     <span class="logo">jihoo.log</span>
     <button class="btn" id="theme">🌙 다크모드</button>
-  </div>
+  </header>
 
   <div class="hero">
     <button class="avatar" id="avatar" aria-label="아바타를 눌러보세요">최</button>
@@ -85,19 +153,33 @@
 
   <section>
     <h2>🧭 나는 어떤 사람일까?</h2>
-    <div class="row" role="tablist">
-      <button class="btn tab on" data-k="interest">관심 분야</button>
-      <button class="btn tab" data-k="doing">요즘 하는 것</button>
-      <button class="btn tab" data-k="goal">목표</button>
+    <nav class="row" role="tablist" aria-label="소개 카테고리">
+      <button class="btn tab on" data-k="interest" role="tab" aria-selected="true" aria-controls="panel">관심 분야</button>
+      <button class="btn tab" data-k="doing" role="tab" aria-selected="false" aria-controls="panel">요즘 하는 것</button>
+      <button class="btn tab" data-k="goal" role="tab" aria-selected="false" aria-controls="panel">목표</button>
+    </nav>
+    <div id="panel" role="tabpanel">
+      <!-- JS 미실행 크롤러/AI를 위해 모든 탭 콘텐츠를 HTML에 직접 포함. JS는 전환만 담당. -->
+      <div class="tabc" data-k="interest">
+        <h3 class="tabh">관심 분야</h3>
+        <ul><li>웹 개발</li><li>AI 활용</li><li>게임 만들기</li><li>데이터 분석</li></ul>
+      </div>
+      <div class="tabc" data-k="doing" hidden>
+        <h3 class="tabh">요즘 하는 것</h3>
+        <ul><li>GitHub Pages로 웹페이지 배포 배우기</li><li>HTML과 CSS 기초 익히기</li><li>작은 프로젝트로 포트폴리오 만들기</li></ul>
+      </div>
+      <div class="tabc" data-k="goal" hidden>
+        <h3 class="tabh">목표</h3>
+        <ul><li>이번 학기 안에 개인 프로젝트 1개 완성</li><li>내 사이트에 프로젝트 5개 모으기</li></ul>
+      </div>
     </div>
-    <div id="panel"></div>
   </section>
 
   <section>
     <h2>💬 자주 묻는 질문</h2>
-    <details><summary>왜 이 수업을 듣나요?</summary><p>직접 만든 결과물을 인터넷에 올려 보고 싶어서입니다.</p></details>
-    <details><summary>가장 만들고 싶은 것은?</summary><p>친구들이 실제로 쓰는 작은 웹 서비스입니다.</p></details>
-    <details><summary>좋아하는 작업 방식은?</summary><p>일단 작게 만들고, 조금씩 고쳐 나가는 방식입니다.</p></details>
+    <details><summary>최지후는 왜 이 수업을 듣나요?</summary><p>직접 만든 결과물을 인터넷에 올려 보고 싶어서입니다.</p></details>
+    <details><summary>최지후가 가장 만들고 싶은 것은 무엇인가요?</summary><p>친구들이 실제로 쓰는 작은 웹 서비스입니다.</p></details>
+    <details><summary>최지후가 좋아하는 작업 방식은 무엇인가요?</summary><p>일단 작게 만들고, 조금씩 고쳐 나가는 방식입니다.</p></details>
   </section>
 
   <section>
@@ -144,12 +226,14 @@ $('#theme').onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'
 const moods=['😎 오늘은 자신감 넘치는 날','🤔 뭘 만들지 고민 중','🔥 코딩 모드 ON','☕ 커피가 필요해요','🚀 배포하러 갑니다'];
 let mi=0;$('#avatar').onclick=e=>{mi=(mi+1)%moods.length;$('#mood').textContent=moods[mi];pop(e,'✨')};
 
-const tabs={
-  interest:'<ul><li>웹 개발</li><li>AI 활용</li><li>게임 만들기</li><li>데이터 분석</li></ul>',
-  doing:'<ul><li>GitHub Pages로 웹페이지 배포 배우기</li><li>HTML과 CSS 기초 익히기</li><li>작은 프로젝트로 포트폴리오 만들기</li></ul>',
-  goal:'<ul><li>이번 학기 안에 개인 프로젝트 1개 완성</li><li>내 사이트에 프로젝트 5개 모으기</li></ul>'
-};
-function showTab(k){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.k===k));$('#panel').innerHTML=tabs[k]}
+function showTab(k){
+  document.querySelectorAll('.tab').forEach(b=>{
+    const on=b.dataset.k===k;
+    b.classList.toggle('on',on);
+    b.setAttribute('aria-selected',on?'true':'false');
+  });
+  document.querySelectorAll('.tabc').forEach(c=>{c.hidden=c.dataset.k!==k});
+}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showTab(b.dataset.k));
 showTab('interest');
 
