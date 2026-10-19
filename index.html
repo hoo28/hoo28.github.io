@@ -33,16 +33,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
 
+<!-- 구조화 데이터: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "jihoo.log — 최지후 자기소개",
+  "url": "https://hoo28.github.io/",
+  "inLanguage": "ko",
+  "author": { "@type": "Person", "name": "최지후" }
+}
+</script>
+
 <!-- 구조화 데이터: Person (SEO 지식패널 + AI 인용) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "최지후",
+  "alternateName": "jihoo",
   "url": "https://hoo28.github.io/",
+  "image": "https://hoo28.github.io/og-image.png",
   "jobTitle": "신입 개발자",
-  "description": "웹 개발, AI 활용, 게임 만들기에 관심 있는 신입 개발자",
-  "knowsAbout": ["웹 개발", "HTML", "CSS", "JavaScript", "AI 활용", "데이터 분석"],
+  "description": "웹 개발, AI 활용, 게임 만들기에 관심 있는 신입 개발자. 작게 만들고 빠르게 고치는 작업 방식을 좋아합니다.",
+  "knowsAbout": ["웹 개발", "HTML", "CSS", "JavaScript", "AI 활용", "데이터 분석", "GitHub Pages"],
+  "knowsLanguage": ["ko"],
   "sameAs": [
     "https://github.com/bizict"
   ]
@@ -116,6 +131,17 @@
   :root[data-theme="dark"] #panel{background:rgba(255,255,255,.05)}
   .tabh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
   .tabc[hidden]{display:none}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--accent2);color:#fff;padding:10px 16px;border-radius:0 0 12px 0;z-index:10}
+  .skip:focus{left:0}
+  .projects{display:grid;grid-template-columns:1fr;gap:12px;margin-top:4px}
+  @media(min-width:520px){.projects{grid-template-columns:1fr 1fr}}
+  .proj{display:block;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.35);border:1px solid var(--line);text-decoration:none;color:inherit;transition:transform .15s}
+  :root[data-theme="dark"] .proj{background:rgba(255,255,255,.05)}
+  .proj:hover{transform:translateY(-3px)}
+  .proj h3{font-family:"Jua",sans-serif;font-weight:400;margin:0 0 6px;font-size:1.05rem}
+  .proj p{color:var(--sub);font-size:.92rem}
+  .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-size:.78rem;padding:3px 10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
   details{border-radius:14px;padding:10px 16px;margin-bottom:8px;background:rgba(255,255,255,.35);border:1px solid var(--line)}
   :root[data-theme="dark"] details{background:rgba(255,255,255,.05)}
   summary{cursor:pointer;font-weight:700}
@@ -134,7 +160,8 @@
 </style>
 </head>
 <body>
-<main>
+<a class="skip" href="#main">본문 바로가기</a>
+<main id="main">
   <header class="top">
     <span class="logo">jihoo.log</span>
     <button class="btn" id="theme">🌙 다크모드</button>
@@ -149,6 +176,24 @@
   <section>
     <h2>👋 소개</h2>
     <p>새로운 걸 만들어 보는 일을 좋아합니다. 이 페이지는 수업 Sprint 1에서 처음 배포한 저의 첫 웹사이트이고, 앞으로 계속 고쳐 나갈 예정입니다.</p>
+  </section>
+
+  <section>
+    <h2>🛠️ 프로젝트</h2>
+    <p style="color:var(--sub);margin-bottom:12px">만들면서 배운 작은 결과물들입니다. (아래는 예시 — 실제 프로젝트로 교체하세요)</p>
+    <!-- TODO: href를 실제 프로젝트 저장소/데모 링크로 교체 -->
+    <div class="projects">
+      <a class="proj" href="https://github.com/bizict" rel="noopener">
+        <h3>자기소개 웹사이트</h3>
+        <p>GitHub Pages로 배포한 첫 개인 사이트. 다크모드·탭·체크리스트를 바닐라 JS로 구현.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+      </a>
+      <a class="proj" href="https://github.com/bizict" rel="noopener">
+        <h3>(준비 중) 두 번째 프로젝트</h3>
+        <p>친구들이 실제로 쓰는 작은 웹 서비스를 목표로 기획 중입니다.</p>
+        <div class="tags"><span class="tag">기획 중</span></div>
+      </a>
+    </div>
   </section>
 
   <section>
@@ -197,11 +242,13 @@
 
   <section>
     <h2>📮 연락처 &amp; 응원</h2>
+    <!-- TODO: 아래 example@email.com 을 실제 이메일로 교체하세요 -->
     <p>이메일: <span id="mail">example@email.com</span></p>
     <div class="row" style="margin-top:12px">
       <button class="btn" id="copy">이메일 복사</button>
       <button class="btn" id="like">👍 응원하기 <b id="likes">0</b></button>
-      <a class="btn" href="https://github.com/bizict">GitHub 가기</a>
+      <!-- TODO: github.com/bizict 을 실제 GitHub 계정으로 교체하세요 (JSON-LD sameAs, 프로젝트 링크도 함께) -->
+      <a class="btn" href="https://github.com/bizict" rel="noopener">GitHub 가기</a>
     </div>
   </section>
 
